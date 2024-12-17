@@ -42,8 +42,8 @@ app.get("/generateid/:department", (req, res) => {
     if (results.length > 0) {
       const lastID = results[0].employeeID;
       const numericPart = parseInt(lastID.replace(/\D/g, ""), 10); 
-      const incrementedNumber = numericPart + 1;
-      newEmployeeID = `${department.substring(0, 2).toUpperCase()}${String(incrementedNumber).padStart(3, "0")}`;
+      const inc = numericPart + 1;
+      newEmployeeID = `${department.substring(0, 2).toUpperCase()}${String(inc).padStart(3, "0")}`;
     } else {
       newEmployeeID = `${department.substring(0, 2).toUpperCase()}001`;
     }
